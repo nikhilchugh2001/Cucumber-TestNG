@@ -3,16 +3,16 @@
     "line": 1,
     "elements": [
       {
-        "line": 15,
-        "name": "Free CRM Login Test Scenario",
+        "line": 14,
+        "name": "Login Test Scenario",
         "description": "",
-        "id": "free-crm-login-feature;free-crm-login-test-scenario;;2",
+        "id": "login-feature;login-test-scenario;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 10242175386,
+              "duration": 8985078800,
               "status": "passed"
             },
             "line": 5,
@@ -24,11 +24,11 @@
           },
           {
             "result": {
-              "duration": 9733303,
+              "duration": 4732300,
               "status": "passed"
             },
             "line": 6,
-            "name": "title of login page is Free CRM",
+            "name": "title of login page is Customer Engagement",
             "match": {
               "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
             },
@@ -36,15 +36,15 @@
           },
           {
             "result": {
-              "duration": 258433060,
+              "duration": 100939600,
               "status": "passed"
             },
             "line": 7,
-            "name": "user enters \"naveenk\" and \"test@123\"",
+            "name": "user enters \"nikhilc\" and \"test@123\"",
             "match": {
               "arguments": [
                 {
-                  "val": "naveenk",
+                  "val": "nikhilc",
                   "offset": 13
                 },
                 {
@@ -62,7 +62,7 @@
           },
           {
             "result": {
-              "duration": 11333726997,
+              "duration": 43343700,
               "status": "passed"
             },
             "line": 8,
@@ -74,22 +74,10 @@
           },
           {
             "result": {
-              "duration": 6375672,
+              "duration": 601373600,
               "status": "passed"
             },
             "line": 9,
-            "name": "user is on home page",
-            "match": {
-              "location": "LoginStepDefinition.user_is_on_hopme_page()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 87683080,
-              "status": "passed"
-            },
-            "line": 10,
             "name": "Close the browser",
             "match": {
               "location": "LoginStepDefinition.close_the_browser()"
@@ -99,9 +87,9 @@
         ]
       }
     ],
-    "name": "Free CRM Login Feature",
+    "name": "Login Feature",
     "description": "",
-    "id": "free-crm-login-feature",
+    "id": "login-feature",
     "keyword": "Feature",
     "uri": "login.feature"
   }

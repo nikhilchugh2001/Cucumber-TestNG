@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -19,17 +21,23 @@ public class LoginStepDefinition{
 	
 	 @Given("^user is already on Login Page$")
 	 public void user_already_on_login_page(){
-	 System.setProperty("webdriver.chrome.driver","/Users/naveenkhunteta/Downloads/chromedriver");
+	 System.setProperty("webdriver.chrome.driver","C:\\Users\\Nikhil\\chromedriver_win32\\chromedriver.exe");
 	 driver = new ChromeDriver();
-	 driver.get("https://www.freecrm.com/index.html");
+	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	 driver.get("https://www.comm100.com/");
+	 WebElement loginBtn =
+			 driver.findElement(By.xpath("//a[text()='Sign In']"));
+			 JavascriptExecutor js = (JavascriptExecutor)driver;
+			 js.executeScript("arguments[0].click();", loginBtn);
 	 }
 	
+	 
 	
-	 @When("^title of login page is Free CRM$")
+	 @When("^title of login page is Customer Engagement$")
 	 public void title_of_login_page_is_free_CRM(){
 	 String title = driver.getTitle();
 	 System.out.println(title);
-	 Assert.assertEquals("Free CRM in the cloud software boosts sales", title);
+	 Assert.assertEquals("Comm100 - User Sign In", title);
 	 }
 	
 	 //Reg Exp:
@@ -38,44 +46,19 @@ public class LoginStepDefinition{
 	
 	 @Then("^user enters \"(.*)\" and \"(.*)\"$")
 	 public void user_enters_username_and_password(String username, String password){
-	 driver.findElement(By.name("username")).sendKeys(username);
-	 driver.findElement(By.name("password")).sendKeys(password);
+	 driver.findElement(By.xpath("//input[@name='loginemail']")).sendKeys(username);
+	 driver.findElement(By.xpath("//input[@name='loginpassword']")).sendKeys(password);
 	 }
 	
 	 @Then("^user clicks on login button$")
 	 public void user_clicks_on_login_button() {
 	 WebElement loginBtn =
-	 driver.findElement(By.xpath("//input[@type='submit']"));
+	 driver.findElement(By.xpath("//button[text()='Sign in']"));
 	 JavascriptExecutor js = (JavascriptExecutor)driver;
 	 js.executeScript("arguments[0].click();", loginBtn);
 	 }
 	
 	
-	 @Then("^user is on home page$")
-	 public void user_is_on_hopme_page(){
-	 String title = driver.getTitle();
-	 System.out.println("Home Page title ::"+ title);
-	 Assert.assertEquals("CRMPRO", title);
-	 }
-	 
-	 @Then("^user moves to new contact page$")
-	 public void user_moves_to_new_contact_page() {
-		driver.switchTo().frame("mainpanel");
-		Actions action = new Actions(driver);
-		action.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"))).build().perform();
-		driver.findElement(By.xpath("//a[contains(text(),'New Contact')]")).click();
-		
-		}
-	 
-	 
-	 @Then("^user enters contact details \"(.*)\" and \"(.*)\" and \"(.*)\"$")
-	 public void user_enters_contacts_details(String firstname, String lastname, String position){
-		 driver.findElement(By.id("first_name")).sendKeys(firstname);
-		 driver.findElement(By.id("surname")).sendKeys(lastname);
-		 driver.findElement(By.id("company_position")).sendKeys(position);
-		 driver.findElement(By.xpath("//input[@type='submit' and @value='Save']")).click();
-	 }
-	 
 
 	 @Then("^Close the browser$")
 	 public void close_the_browser(){

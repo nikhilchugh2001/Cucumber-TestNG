@@ -1,16 +1,16 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("login.feature");
 formatter.feature({
   "line": 1,
-  "name": "Free CRM Login Feature",
+  "name": "Login Feature",
   "description": "",
-  "id": "free-crm-login-feature",
+  "id": "login-feature",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 3,
-  "name": "Free CRM Login Test Scenario",
+  "name": "Login Test Scenario",
   "description": "",
-  "id": "free-crm-login-feature;free-crm-login-test-scenario",
+  "id": "login-feature;login-test-scenario",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
@@ -21,7 +21,7 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "title of login page is Free CRM",
+  "name": "title of login page is Customer Engagement",
   "keyword": "When "
 });
 formatter.step({
@@ -36,44 +36,39 @@ formatter.step({
 });
 formatter.step({
   "line": 9,
-  "name": "user is on home page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 10,
   "name": "Close the browser",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 13,
+  "line": 12,
   "name": "",
   "description": "",
-  "id": "free-crm-login-feature;free-crm-login-test-scenario;",
+  "id": "login-feature;login-test-scenario;",
   "rows": [
     {
       "cells": [
         "username",
         "password"
       ],
-      "line": 14,
-      "id": "free-crm-login-feature;free-crm-login-test-scenario;;1"
+      "line": 13,
+      "id": "login-feature;login-test-scenario;;1"
     },
     {
       "cells": [
-        "naveenk",
+        "nikhilc",
         "test@123"
       ],
-      "line": 15,
-      "id": "free-crm-login-feature;free-crm-login-test-scenario;;2"
+      "line": 14,
+      "id": "login-feature;login-test-scenario;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 15,
-  "name": "Free CRM Login Test Scenario",
+  "line": 14,
+  "name": "Login Test Scenario",
   "description": "",
-  "id": "free-crm-login-feature;free-crm-login-test-scenario;;2",
+  "id": "login-feature;login-test-scenario;;2",
   "type": "scenario",
   "keyword": "Scenario Outline"
 });
@@ -84,12 +79,12 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "title of login page is Free CRM",
+  "name": "title of login page is Customer Engagement",
   "keyword": "When "
 });
 formatter.step({
   "line": 7,
-  "name": "user enters \"naveenk\" and \"test@123\"",
+  "name": "user enters \"nikhilc\" and \"test@123\"",
   "matchedColumns": [
     0,
     1
@@ -103,11 +98,6 @@ formatter.step({
 });
 formatter.step({
   "line": 9,
-  "name": "user is on home page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 10,
   "name": "Close the browser",
   "keyword": "Then "
 });
@@ -115,20 +105,20 @@ formatter.match({
   "location": "LoginStepDefinition.user_already_on_login_page()"
 });
 formatter.result({
-  "duration": 10242175386,
+  "duration": 8985078800,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
 });
 formatter.result({
-  "duration": 9733303,
+  "duration": 4732300,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "naveenk",
+      "val": "nikhilc",
       "offset": 13
     },
     {
@@ -139,28 +129,21 @@ formatter.match({
   "location": "LoginStepDefinition.user_enters_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 258433060,
+  "duration": 100939600,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_clicks_on_login_button()"
 });
 formatter.result({
-  "duration": 11333726997,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoginStepDefinition.user_is_on_hopme_page()"
-});
-formatter.result({
-  "duration": 6375672,
+  "duration": 43343700,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.close_the_browser()"
 });
 formatter.result({
-  "duration": 87683080,
+  "duration": 601373600,
   "status": "passed"
 });
 });
